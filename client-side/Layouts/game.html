@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body style="background-color: saddlebrown">
+		<!-- TOP BAR -->
+		<!-- CARDS -->
+		<div
+			id="gameScreen"
+			style="
+				background-image: url('../Sprites/General/Background.jpg');
+				background-repeat: no-repeat;
+				height: 100vh;
+				width: auto;
+				background-size: contain;
+				background-position: center;
+				margin: auto;
+				position: relative;
+			">
+			<div
+				id="card-row"
+				style="
+					/* background-color: red; */
+					width: 260px;
+					height: 75px;
+					position: absolute;
+					top: 14px;
+					left: 458px;
+				">
+				<img
+					style="border: 3px solid transparent"
+					onclick="selectCard(0)"
+					id="card-1"
+					height="100%"
+					src="../Sprites/Seeds/IcePeaSeed.png"
+					alt="" />
+				<img
+					style="border: 3px solid transparent"
+					onclick="selectCard(1)"
+					id="card-2"
+					height="100%"
+					src="../Sprites/Seeds/PeaShooterSeed.png"
+					alt="" />
+				<img
+					style="border: 3px solid transparent"
+					onclick="selectCard(2)"
+					id="card-3"
+					height="100%"
+					src="../Sprites/Seeds/SunFlowerSeed.png"
+					alt="" />
+				<img
+					style="border: 3px solid transparent"
+					onclick="selectCard(3)"
+					id="card-4"
+					height="100%"
+					src="../Sprites/Seeds/WallNutSeed.png"
+					alt="" />
+			</div>
+		</div>
+		<!-- END CARDS -->
+
+		<!-- SHOVEL -->
+		<div
+			id="shovel"
+			style="
+				/* background-color: red; */
+				width: 56px;
+				height: 64px;
+				position: absolute;
+				left: 935px;
+				top: 14px;
+				background-image: url('../Sprites/General/Shovel.png');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			"></div>
+		<!-- END SHOVEL -->
+
+		<!-- COIN -->
+		<div
+			id="coin-display"
+			style="
+				width: 57px;
+				height: 23px;
+				position: absolute;
+				top: 75px;
+				left: 387px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: 700;
+				font-size: 18px;
+			">
+			50
+		</div>
+		<!-- END COIN -->
+		<!-- END TOP BAR -->
+
+		<div
+			id="placeable-grid"
+			style="
+				position: absolute;
+				display: flex;
+				flex-wrap: wrap;
+				/* background-color: rgba(255, 0, 0, 0.5); */
+				width: 692px;
+				height: 464px;
+				top: 130px;
+				left: 359px;
+			"></div>
+
+		<script src="../Libraries/Animator/animator.js"></script>
+		<script src="gameScript.js"></script>
+	</body>
+</html>

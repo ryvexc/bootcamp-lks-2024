@@ -1,0 +1,35 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: saddlebrown;
+}
+
+.input {
+	background-color: transparent;
+	outline: none;
+	border: 3px solid rgb(182, 100, 62);
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	border-radius: 7px;
+}
+
+.input::placeholder {
+	color: rgb(182, 100, 62);
+}
+
+button {
+	background-color: rgb(0, 170, 0);
+	outline: none;
+	border: none;
+	border-radius: 7px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	color: white;
+	font-weight: 700;
+	font-size: 16px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Layouts - Login</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body style="display: flex; justify-content: center; gap: 30px">
+		<div
+			style="
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				height: 100vh;
+			">
+			<img src="../Sprites/General/logo.png" alt="" />
+			<div style="display: flex; flex-direction: column; gap: 10px">
+				<input
+					type="text"
+					style="padding-left: 15px; padding-right: 15px"
+					class="input"
+					placeholder="input username" />
+				<select type="text" class="input" placeholder="input username">
+					<option value="" disabled selected>Select Level</option>
+					<option value="" style="color: rgb(182, 100, 62)">Easy</option>
+					<option value="" style="color: rgb(182, 100, 62)">Medium</option>
+					<option value="" style="color: rgb(182, 100, 62)">Hard</option>
+				</select>
+				<button>Play</button>
+			</div>
+		</div>
+
+		<div style="display: flex; align-items: center">
+			<div
+				style="
+					background-color: rgba(0, 0, 0, 0.5);
+					padding: 24px;
+					color: white;
+					height: 70vh;
+				">
+				<h1 style="margin-bottom: 10px">How To Play</h1>
+				<p style="margin-bottom: 10px">1. Input Username</p>
+				<p style="margin-bottom: 10px">
+					2. Take the sun to choost the plant card
+				</p>
+				<p style="margin-bottom: 10px">
+					3. Put a plant cards into field to fight zombies
+				</p>
+				<p style="margin-bottom: 10px">
+					4. Dont let zombies pass through the yard
+				</p>
+				<p style="margin-bottom: 10px">5. Enjoy!</p>
+			</div>
+		</div>
+
+		<script src="loginScript.js"></script>
+	</body>
+</html>

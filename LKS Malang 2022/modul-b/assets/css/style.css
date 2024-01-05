@@ -1,0 +1,62 @@
+@font-face {
+	font-family: watchword;
+	src: url(../fonts/watchword/Watchword_regular_demo.otf);
+}
+
+@font-face {
+	font-family: codec;
+	src: url(../fonts/codec/Codec-Cold-Regular-trial.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	font-family: "watchword";
+	font-size: 16px;
+}
+
+.logo-header {
+	font-family: "codec" !important;
+	font-weight: 700;
+}
+
+input:focus {
+	outline: none !important;
+	border: 1px solid #dc3545 !important;
+}
+
+.carousel-img-item {
+	filter: brightness(40%);
+	height: 450px;
+}
+
+.carousel-title {
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	color: white;
+	transform: translate(-50%, -50%);
+	z-index: 50;
+}
+
+@media screen and (max-width: 768px) {
+	.carousel-img-item {
+		filter: brightness(40%);
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.carousel-img-item {
+		filter: brightness(40%);
+		height: 200px;
+	}
+}
+
+.truncate {
+	-webkit-line-clamp: 4;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

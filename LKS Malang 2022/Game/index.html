@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="js/tailwind.js"></script>
+
+		<title>Login</title>
+	</head>
+	<body background="assets/bg-1.jpeg" class="h-screen">
+		<div class="w-full h-full flex items-center justify-center gap-3 py-10">
+			<div class="bg-white/40 backdrop-blur-lg p-5 rounded-xl">
+				<img src="assets/pngwing.com (13).png" class="w-64" alt="" />
+				<div>
+					<label for="name-input">Name</label>
+					<input
+						type="text"
+						id="name-input"
+						class="px-3 py-2 outline-none rounded-lg border border-gray-500" />
+				</div>
+				<div class="flex m-4 gap-2">
+					<div class="rounded-lg overflow-hidden border border-gray-400">
+						<img
+							onclick="set(0)"
+							src="assets/bg-1.jpeg"
+							class="w-10 aspect-square"
+							alt="" />
+					</div>
+					<div class="rounded-lg overflow-hidden border border-gray-400">
+						<img
+							onclick="set(1)"
+							src="assets/bg-2.jpg"
+							class="w-10 aspect-square"
+							alt="" />
+					</div>
+					<div class="rounded-lg overflow-hidden border border-gray-400">
+						<img
+							onclick="set(2)"
+							src="assets/bg-3.jpg"
+							class="w-10 aspect-square"
+							alt="" />
+					</div>
+					<div class="rounded-lg overflow-hidden border border-gray-400">
+						<img
+							onclick="set(3)"
+							src="assets/bg-4.jpg"
+							class="w-10 aspect-square"
+							alt="" />
+					</div>
+				</div>
+				<button
+					onclick="startGame()"
+					class="text-center bg-green-600 text-white px-3 py-2 rounded-lg w-full">
+					Play
+				</button>
+			</div>
+
+			<div
+				class="bg-white/40 backdrop-blur-lg p-5 rounded-xl h-full overflow-y-scroll">
+				<h1 class="font-bold text-2xl mb-4">Leaderboards</h1>
+
+				<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+					<table class="w-full text-sm text-left rtl:text-right text-gray-400">
+						<thead class="text-xs uppercase bg-gray-700 text-gray-400">
+							<tr>
+								<th scope="col" class="px-6 py-3">No</th>
+								<th scope="col" class="px-6 py-3">Name</th>
+								<th scope="col" class="px-6 py-3">Score</th>
+								<th scope="col" class="px-6 py-3">Time</th>
+							</tr>
+						</thead>
+						<tbody id="table-body">
+							<!-- <tr
+								class="odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700">
+								<th
+									scope="row"
+									class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+									Apple MacBook Pro 17"
+								</th>
+								<td class="px-6 py-4">Silver</td>
+								<td class="px-6 py-4">Laptop</td>
+								<td class="px-6 py-4">$2999</td>
+							</tr>
+							<tr
+								class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+								<th
+									scope="row"
+									class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+									Microsoft Surface Pro
+								</th>
+								<td class="px-6 py-4">White</td>
+								<td class="px-6 py-4">Laptop PC</td>
+								<td class="px-6 py-4">$1999</td>
+							</tr>
+							<tr
+								class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+								<th
+									scope="row"
+									class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+									Magic Mouse 2
+								</th>
+								<td class="px-6 py-4">Black</td>
+								<td class="px-6 py-4">Accessories</td>
+								<td class="px-6 py-4">$99</td>
+							</tr>
+							<tr
+								class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+								<th
+									scope="row"
+									class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+									Google Pixel Phone
+								</th>
+								<td class="px-6 py-4">Gray</td>
+								<td class="px-6 py-4">Phone</td>
+								<td class="px-6 py-4">$799</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const bgImages = ["bg-1.jpeg", "bg-2.jpg", "bg-3.jpg", "bg-4.jpg"];
+
+			const set = (i) => {
+				localStorage.setItem("bgImage", `assets/${bgImages[i]}`);
+				document.body.background = `assets/${bgImages[i]}`;
+			};
+
+			const startGame = () => {
+				localStorage.setItem(
+					"name",
+					document.getElementById("name-input").value,
+				);
+
+				window.location.href = "game.html";
+			};
+
+			window.onload = () => {
+				const tableBody = document.getElementById("table-body");
+
+				if (!localStorage.getItem("leaderboards")) {
+					localStorage.setItem("leaderboards", JSON.stringify([]));
+				}
+
+				JSON.parse(localStorage.getItem("leaderboards")).forEach(
+					(user, index) => {
+						tableBody.innerHTML += `<tr
+            class="odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              ${index + 1}
+            </th>
+            <td class="px-6 py-4">${user.name}</td>
+            <td class="px-6 py-4">${user.score}</td>
+            <td class="px-6 py-4">${user.time}</td>
+          </tr>`;
+					},
+				);
+
+				document.body.background = localStorage.getItem("bgImage");
+			};
+		</script>
+	</body>
+</html>
